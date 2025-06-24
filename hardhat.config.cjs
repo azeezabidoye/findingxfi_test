@@ -1,10 +1,10 @@
 require("@nomicfoundation/hardhat-toolbox");
-require("dotenv");
+require("dotenv").config();
 require("hardhat-deploy");
 require("hardhat-gas-reporter");
 require("solidity-coverage");
 
-const { PRIVATE_KEY, CROSSFI_ALCHEMY_URL } = process.env;
+const { PRIVATE_KEY, CROSSFI_ALCHEMY_URL, COINMARKETCAP_API_KEY } = process.env;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -12,21 +12,21 @@ module.exports = {
   networks: {
     crossfiTestnet: {
       url: CROSSFI_ALCHEMY_URL,
-      accounts: [`0x${PRIVATE_KEY}`],
+      accounts: [PRIVATE_KEY],
       chainId: 4157,
     },
-    namedAccounts: {
-      deployer: {
-        default: 0,
-      },
-    },
-    gasReporter: {
-      enabled: true,
-      currency: "USD",
-      coinmarketcap: process.env.COINMARKETCAP_API_KEY, // Optional if you want real cost estimate
-      showTimeSpent: true,
-      excludeContracts: [],
-      noColors: false,
-    },
+    // namedAccounts: {
+    //   deployer: {
+    //     default: 0,
+    //   },
+    // },
+    // gasReporter: {
+    //   enabled: true,
+    //   currency: "USD",
+    //   coinmarketcap: COINMARKETCAP_API_KEY, // Optional if you want real cost estimate
+    //   showTimeSpent: true,
+    //   excludeContracts: [],
+    //   noColors: false,
+    // },
   },
 };

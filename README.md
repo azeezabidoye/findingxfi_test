@@ -11,3 +11,7 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.js
 ```
+
+COMPILE RESULT
+Compiled 1 Solidity file successfully (evm target: paris).
+✨ Done in 3.15s.
