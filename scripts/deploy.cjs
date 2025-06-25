@@ -1,0 +1,19 @@
+const { ethers } = require("hardhat");
+
+async function main() {
+  // Get the contract factory
+  const FundingXFI = await ethers.getContractFactory("FundingXFI");
+
+  console.log("Deploying contract...");
+  const fundingxfi = await FundingXFI.deploy(); // No constructor args needed
+  await fundingxfi.deployed();
+
+  console.log(`✅ Contract deployed at: ${fundingxfi.address}`);
+}
+
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error("❌ Deployment failed:", error);
+    process.exit(1);
+  });
