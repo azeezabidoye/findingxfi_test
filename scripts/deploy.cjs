@@ -6,7 +6,7 @@ async function main() {
 
   console.log("Deploying contract...");
   const fundingxfi = await FundingXFI.deploy(); // No constructor args needed
-  await fundingxfi.deployed();
+  await fundingxfi.waitForDeployments();
 
   console.log(`✅ Contract deployed at: ${fundingxfi.address}`);
 }
