@@ -15,11 +15,11 @@ module.exports = {
       accounts: [`0x${PRIVATE_KEY}]`],
       chainId: 4157,
     },
-    namedAccounts: {
-      deployer: {
-        default: 0,
-      },
-    },
+    // namedAccounts: {
+    //   deployer: {
+    //     default: 0,
+    //   },
+    // },
     // gasReporter: {
     //   enabled: true,
     //   currency: "USD",
