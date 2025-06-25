@@ -10,6 +10,7 @@ const { PRIVATE_KEY, CROSSFI_ALCHEMY_URL } = process.env;
 module.exports = {
   solidity: "0.8.28",
   networks: {
+    hardhat: { chainId: 1337 },
     crossfiTestnet: {
       url: CROSSFI_ALCHEMY_URL,
       accounts: [`0x${PRIVATE_KEY}]`],
