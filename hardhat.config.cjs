@@ -4,7 +4,7 @@ require("hardhat-deploy");
 require("hardhat-gas-reporter");
 require("solidity-coverage");
 
-const { PRIVATE_KEY, CROSSFI_ALCHEMY_URL } = process.env;
+const { PRIVATE_KEY } = process.env;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
   networks: {
     hardhat: { chainId: 1337 },
     crossfiTestnet: {
-      url: CROSSFI_ALCHEMY_URL,
+      url: "rpc.testnet.ms",
       accounts: [`0x${PRIVATE_KEY}]`],
       chainId: 4157,
     },
