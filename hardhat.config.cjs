@@ -1,6 +1,5 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
-require("hardhat-deploy");
 require("hardhat-gas-reporter");
 require("solidity-coverage");
 
@@ -16,11 +15,6 @@ module.exports = {
       accounts: [PRIVATE_KEY],
       chainId: 4157,
     },
-    // namedAccounts: {
-    //   deployer: {
-    //     default: 0,
-    //   },
-    // },
     // gasReporter: {
     //   enabled: true,
     //   currency: "USD",
