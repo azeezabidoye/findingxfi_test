@@ -4,7 +4,7 @@ require("hardhat-deploy");
 require("hardhat-gas-reporter");
 require("solidity-coverage");
 
-const { PRIVATE_KEY, CROSSFI_ALCHEMY_URL, COINMARKETCAP_API_KEY } = process.env;
+const { PRIVATE_KEY, CROSSFI_ALCHEMY_URL } = process.env;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -15,11 +15,11 @@ module.exports = {
       accounts: [PRIVATE_KEY],
       chainId: 4157,
     },
-    // namedAccounts: {
-    //   deployer: {
-    //     default: 0,
-    //   },
-    // },
+    namedAccounts: {
+      deployer: {
+        default: 0,
+      },
+    },
     // gasReporter: {
     //   enabled: true,
     //   currency: "USD",
