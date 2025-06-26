@@ -2,18 +2,18 @@
 pragma solidity ^0.8.28;
 
 contract FundingXFI {
-    address public owner;
-    uint256 public minimumAmount = 20 * 1e18; // ETH to Wei
+    address public immutable i_owner;
+    uint256 public constant MINIMUMAMOUNT = 20 * 1e18; // ETH to Wei
     mapping(address => uint256) public addressToAmountFunded;
     mapping(address => bool) private hasFunded;
     address[] private funders;
 
     constructor() {
-        owner = msg.sender;
+        i_owner = msg.sender;
     }
 
     function fund() external payable {
-        require(msg.value > minimumAmount, "Send enough funds!");
+        require(msg.value > MINIMUMAMOUNT, "Send enough funds!");
 
         if (!hasFunded[msg.sender]) {
             hasFunded[msg.sender] = true;
