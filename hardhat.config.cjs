@@ -3,7 +3,7 @@ require("dotenv").config();
 require("hardhat-gas-reporter");
 require("solidity-coverage");
 
-const { PRIVATE_KEY } = process.env;
+const { PRIVATE_KEY, CROSSFI_ALCHEMY_URL } = process.env;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
   networks: {
     hardhat: { chainId: 1337 },
     crossfiTestnet: {
-      url: "https://crossfi-testnet.g.alchemy.com/v2/QvGoIVVwyzXDCki9k_BIt",
+      url: CROSSFI_ALCHEMY_URL,
       accounts: [PRIVATE_KEY],
       chainId: 4157,
     },
@@ -23,5 +23,17 @@ module.exports = {
     //   excludeContracts: [],
     //   noColors: false,
     // },
+  },
+};
+
+module.exports = {
+  // networks...
+  gasReporter: {
+    enabled: true,
+    currency: "USD",
+    coinmarketcap: COINMARKETCAP_API_KEY,
+    showTimeSpent: true,
+    excludeContracts: [],
+    noColors: false,
   },
 };
