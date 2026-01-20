@@ -5,7 +5,7 @@ contract FundingXFI {
     address public owner;
     uint256 public minimumAmount = 20 * 1e18; // ETH to Wei
     mapping(address => uint256) public addressToAmountFunded;
-    mapping(address => bool) private hasFunded;
+    // mapping(address => bool) private hasFunded;
     address[] private funders;
 
     constructor() {
